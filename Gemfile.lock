@@ -5,12 +5,15 @@ GEM
     coderay (1.1.0)
     domain_name (0.5.20160128)
       unf (>= 0.0.5, < 1.0.0)
+    ffi (1.9.10)
+    hashie (3.4.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     json (1.8.3)
     method_source (0.8.2)
     mime-types (2.99)
     multi_json (1.11.2)
+    multipart-post (2.0.0)
     netrc (0.11.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -38,6 +41,12 @@ GEM
       sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
     slop (3.6.0)
+    soda-ruby (0.2.21)
+      hashie (~> 3.4.2)
+      multipart-post (~> 2.0.0)
+      sys-uname (~> 1.0.2)
+    sys-uname (1.0.2)
+      ffi (>= 1.0.0)
     tilt (2.0.2)
     unf (0.1.4)
       unf_ext
@@ -54,6 +63,7 @@ DEPENDENCIES
   rubygems-update
   sinatra
   sinatra-contrib
+  soda-ruby
 
 BUNDLED WITH
    1.11.2

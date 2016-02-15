@@ -8,7 +8,7 @@ require 'sinatra/reloader' if development?
 require 'pry'
 
 get '/' do
-  api_result = RestClient.get 'https://data.cityofboston.gov/resource/ntv7-hwjm.json?$$app_token=nXPqaTa5IpL5WmOGwORxoWGcF&$limit=50000&$offset=0'
+  api_result = RestClient.get 'https://data.cityofboston.gov/resource/ntv7-hwjm.json?$$app_token=nXPqaTa5IpL5WmOGwORxoWGcF&$limit=50000&$offset=0&$select=*'
   result_hash = JSON.parse(api_result)
 
   output = ''
@@ -18,7 +18,7 @@ get '/' do
   result_hash.each do |record|
     total += record['total_earnings'].to_i
     count += 1
-    output << "<tr><td>#{total}</td><td>#{count}</tr>"
+    output << "<tr><td>#{total}</td><td>#{count}<td>#{total/count}</tr>"
   end
 
   # output = "<tr><td>#{total}</td><td>#{count}</tr>"
