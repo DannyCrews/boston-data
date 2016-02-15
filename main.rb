@@ -8,7 +8,7 @@ require 'sinatra/reloader' if development?
 require 'pry'
 
 get '/' do
-  api_result = RestClient.get 'https://data.cityofboston.gov/resource/ntv7-hwjm.json?'
+  api_result = RestClient.get 'https://data.cityofboston.gov/resource/ntv7-hwjm.json?$$app_token=nXPqaTa5IpL5WmOGwORxoWGcF&$limit=50000&$offset=0'
   result_hash = JSON.parse(api_result)
 
   output = ''
