@@ -7,7 +7,9 @@ GEM
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
     coderay (1.1.0)
+    daemons (1.2.3)
     erubis (2.7.0)
+    eventmachine (1.0.9.1)
     ffi (1.9.10)
     hashie (3.4.3)
     json (1.8.3)
@@ -44,6 +46,10 @@ GEM
       sys-uname (~> 1.0.2)
     sys-uname (1.0.2)
       ffi (>= 1.0.0)
+    thin (1.6.4)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (~> 1.0)
     tilt (2.0.2)
 
 PLATFORMS
@@ -59,6 +65,7 @@ DEPENDENCIES
   sinatra
   sinatra-contrib
   soda-ruby
+  thin
 
 BUNDLED WITH
    1.11.2
