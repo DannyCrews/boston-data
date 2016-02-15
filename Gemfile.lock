@@ -2,7 +2,12 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (3.6.8)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     coderay (1.1.0)
+    erubis (2.7.0)
     ffi (1.9.10)
     hashie (3.4.3)
     json (1.8.3)
@@ -14,6 +19,8 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.6.4)
+    rack-flash3 (1.0.5)
+      rack
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -43,9 +50,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
   bundler
   json
   pry
+  rack-flash3
   rubygems-update
   sinatra
   sinatra-contrib

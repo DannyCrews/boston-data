@@ -7,6 +7,11 @@ gem 'sinatra'
 gem 'json'
 gem 'sinatra-contrib'
 gem 'soda-ruby'
+gem 'rack-flash3'
+
+group :development do
+  gem 'better_errors'
+end
 
 group :development, :test do
    gem 'pry'

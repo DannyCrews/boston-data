@@ -6,6 +6,13 @@ require 'json'
 require 'sinatra/reloader' if development?
 require 'pry'
 require 'soda'
+require 'rack-flash'
+require 'better_errors'
+
+configure :development do
+  use BetterErrors::Middleware
+  BetterErrors.application_root = File.expand_path('..', __FILE__)
+end
 
 get '/' do
   client = SODA::Client.new({:domain => "data.cityofboston.gov", :app_token => "nXPqaTa5IpL5WmOGwORxoWGcF"})
