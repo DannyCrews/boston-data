@@ -25,3 +25,12 @@ get '/' do
   erb :index, :locals => {results: output}
 end
 
+get '/form/?' do
+    erb :form
+end
+
+not_found do
+  halt 404, 'page not found'
+end
+
+
