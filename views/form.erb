@@ -1,23 +1,8 @@
-<h1>Form</h1>
+<h1>Search by Department</h1>
 
-<form action="/form/?" method="GET">
+<form action="/form" method="post">
   <label for="department_name">Job Title:</label>
   <input id="department_name" name="title" type="text">
-  <input type="submit" value="Search">
+  <input type="submit">
 </form>
-
-<%= @api_result %>
-
-<table>
-  <th>Boston Open Data</th>
-  <tr>
-    <td><%= results %></td>
-  </tr>
-</table>
-
-<hr noshade>
-
-Powered by the <a href='https://opendata.socrata.com/' target = _new>Soda API</a>
-
-
 

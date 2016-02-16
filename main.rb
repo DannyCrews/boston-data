@@ -18,8 +18,18 @@ configure :development do
 end
 
 get '/' do
+  erb :form
+end
+
+# get '/form' do
+#   erb :form
+# end
+
+post '/form' do
   total = 0
   count = 0
+
+  @title = params[:title]
   api_result = RestClient.get 'https://data.cityofboston.gov/resource/ntv7-hwjm.json?$limit=25000'
   result_hash = JSON.parse(api_result)
 
