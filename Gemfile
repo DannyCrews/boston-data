@@ -9,6 +9,12 @@ gem 'json'
 gem 'sinatra-contrib'
 gem 'rest-client'
 gem 'rack-flash3'
+gem 'rspec'
+gem 'rack'
+gem 'rack-test'
+gem 'guard'
+gem 'guard-rspec'
+gem 'foreman'
 
 
 group :development do
