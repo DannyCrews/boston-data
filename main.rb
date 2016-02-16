@@ -30,7 +30,7 @@ post '/form' do
   count = 0
 
   @title = params[:title]
-  api_result = RestClient.get 'https://data.cityofboston.gov/resource/ntv7-hwjm.json?$limit=25000'
+  api_result = RestClient.get URI.escape("https://data.cityofboston.gov/resource/ntv7-hwjm.json?$limit=25000&$where=position_title like '%25ASSISTANT%25'")
   result_hash = JSON.parse(api_result)
 
   result_hash.each do |result|

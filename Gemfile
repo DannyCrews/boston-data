@@ -15,6 +15,7 @@ gem 'rack-test'
 gem 'guard'
 gem 'guard-rspec'
 gem 'foreman'
+gem 'binding_of_caller'
 
 
 group :development do
