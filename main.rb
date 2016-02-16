@@ -5,7 +5,7 @@ require 'sinatra'
 require 'json'
 require 'sinatra/reloader' if development?
 require 'pry'
-require 'soda'
+require 'rest-client'
 require 'rack-flash'
 require 'better_errors'
 require 'dotenv'
@@ -17,41 +17,20 @@ configure :development do
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
-client = SODA::Client.new({
-  :domain => "data.cityofboston.gov",
-  :app_token => ENV["ACCESS_KEY"]                                  #"nXPqaTa5IpL5WmOGwORxoWGcF"
-})
-
 get '/' do
-  api_result = client.get("ntv7-hwjm.json", {"$limit" => 50000})
-
-  output = ''
   total = 0
   count = 0
+  api_result = RestClient.get 'https://data.cityofboston.gov/resource/ntv7-hwjm.json?$limit=25000'
+  result_hash = JSON.parse(api_result)
 
-  api_result.each do |record|
-    total += record.total_earnings.to_i
+  result_hash.each do |result|
+    total += result['total_earnings'].to_f.round(3)
     count += 1
-    output << "<tr><td>#{total}</td><td>#{count}<td>#{total/count}</tr>"
   end
-
-  # output = "<tr><td>#{total}</td><td>#{count}</tr>"
-  erb :index, :locals => {results: output}
+  average = (total/count).round(2)
+  erb :index, :locals => {results: average}
 end
-
-get '/form/query/' do
-  @testvar = "this is testvar"
-  erb :query_result
-end
-
-get '/form/?' do
-    @title = params[:title]
-    erb :form
-end
-
 
 not_found do
   halt 404, 'page not found'
 end
-
-

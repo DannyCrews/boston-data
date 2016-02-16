@@ -7,7 +7,7 @@ gem 'sinatra'
 gem 'thin'
 gem 'json'
 gem 'sinatra-contrib'
-gem 'soda-ruby'
+gem 'rest-client'
 gem 'rack-flash3'
 
 
