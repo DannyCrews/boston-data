@@ -41,6 +41,10 @@ post '/form' do
   erb :index, :locals => {results: average}
 end
 
+get '/dataset'do
+  erb :dataset
+end
+
 not_found do
   halt 404, 'page not found'
 end
