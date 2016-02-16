@@ -16,6 +16,7 @@ gem 'guard'
 gem 'guard-rspec'
 gem 'foreman'
 gem 'binding_of_caller'
+gem 'sanitize'
 
 
 group :development do

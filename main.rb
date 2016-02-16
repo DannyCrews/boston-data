@@ -26,20 +26,19 @@ end
 # end
 
 post '/form' do
-  total = 0
-  count = 0
-
+  cap_title = params[:title].capitalize
   @title = params[:title]
-  api_result = RestClient.get URI.escape("https://data.cityofboston.gov/resource/ntv7-hwjm.json?$limit=25000&$where=position_title like '%25ASSISTANT%25'")
-  result_hash = JSON.parse(api_result)
 
-  result_hash.each do |result|
-    total += result['total_earnings'].to_f.round(3)
-    count += 1
-  end
-  average = (total/count).round(2)
-  erb :index, :locals => {results: average}
+  html = "https://data.cityofboston.gov/resource/ntv7-hwjm.json?$where=title like '%#{cap_title}%'&$limit=25000&$select=avg(total_earnings)"
+  encoded_url = URI.encode html
+
+  api_result = RestClient.get encoded_url
+  result_array = JSON.parse api_result
+  result = result_array.reduce Hash.new, :merge
+
+  erb :index, :locals => {results: result['avg_total_earnings'].to_f.round(2)}
 end
+
 
 get '/dataset'do
   erb :dataset
