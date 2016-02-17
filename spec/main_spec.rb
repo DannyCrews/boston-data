@@ -25,7 +25,7 @@ describe 'Boston Data' do
 
   # it "returns status 200 when posting" do
   #   post "/"
-  #   expect(last_response).to be_ok
+  #   expect(last_response).to eq(304)
   # end
 
 
