@@ -1,3 +1,3 @@
-require File.dirname(__FILE__) + '/main.rb'
+require './main'
 
-run DataApp
+run Sinatra::Application
