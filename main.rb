@@ -10,7 +10,6 @@ require 'sinatra/base'
 require 'slim'
 require 'uri'
 
-
 set :root, File.dirname(__FILE__)
 
 configure :development do
@@ -25,13 +24,18 @@ if Sinatra::Base.environment == :development
     Dotenv.load
 end
 
-
   get '/' do
     slim :form
   end
 
   post '/' do
+    # headers "Cache-Control" => "public, must-revalidate, max-age=3600",
+    #   "Expires" => Time.at(Time.now.to_i + (60 * 60)).to_s
+
+    # @time_rendered = "This page rendered at #{Time.now}."
+
     cap_title = params[:title].capitalize
+
     @title = params[:title]
 
     html = "https://data.cityofboston.gov/resource/ntv7-hwjm.json?$where=title like '%#{cap_title}%'&$limit=25000&$select=avg(total_earnings)"
