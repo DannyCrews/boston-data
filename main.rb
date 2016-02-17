@@ -1,15 +1,16 @@
 require 'rubygems'
+require 'better_errors' if development?
 require 'bundler'
 Bundler.setup
-require 'sinatra'
-require 'json'
-require 'sinatra/reloader' if development?
-require 'sinatra/base'
-require 'pry'
-require 'rest-client'
-require 'rack-flash'
-require 'better_errors'
 require 'dotenv'
+require 'json'
+require 'pry'
+require 'rack-flash' #not used so far
+require 'rest-client'
+require 'sinatra'
+require 'sinatra/base'
+require 'sinatra/reloader' if development?
+require 'uri'
 
 
 set :root, File.dirname(__FILE__)
@@ -41,6 +42,19 @@ end
 
 get '/dataset'do
   erb :dataset
+end
+
+# Easy environment check from browser
+get '/environment' do
+  if development?
+    "development"
+  elsif production?
+    "production"
+  elsif test?
+    "test"
+  else
+    "Who knows what environment you're in!"
+  end
 end
 
 not_found do
