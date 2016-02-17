@@ -21,11 +21,7 @@ get '/' do
   erb :form
 end
 
-# get '/form' do
-#   erb :form
-# end
-
-post '/form' do
+post '/' do
   cap_title = params[:title].capitalize
   @title = params[:title]
 
@@ -38,7 +34,6 @@ post '/form' do
 
   erb :index, :locals => {results: result['avg_total_earnings'].to_f.round(2)}
 end
-
 
 get '/dataset'do
   erb :dataset
