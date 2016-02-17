@@ -4,11 +4,15 @@ Bundler.setup
 require 'sinatra'
 require 'json'
 require 'sinatra/reloader' if development?
+require 'sinatra/base'
 require 'pry'
 require 'rest-client'
 require 'rack-flash'
 require 'better_errors'
 require 'dotenv'
+
+
+set :root, File.dirname(__FILE__)
 
 Dotenv.load
 

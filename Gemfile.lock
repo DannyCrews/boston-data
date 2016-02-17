@@ -61,6 +61,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rake (10.5.0)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
@@ -121,6 +122,7 @@ DEPENDENCIES
   rack
   rack-flash3
   rack-test
+  rake (~> 10.5)
   rest-client
   rspec
   rubygems-update
