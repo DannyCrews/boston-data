@@ -10,8 +10,10 @@ gem 'rack'
 gem 'rack-flash3'
 gem 'rest-client'
 gem 'rubygems-update'
+gem 'sass'
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'slim'
 gem 'thin'
 
 group :development do

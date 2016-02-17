@@ -83,6 +83,7 @@ GEM
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
     rubygems-update (2.5.2)
+    sass (3.4.21)
     shellany (0.0.1)
     sinatra (1.4.7)
       rack (~> 1.5)
@@ -95,7 +96,11 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
+    slim (3.0.6)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
+    temple (0.7.6)
     thin (1.6.4)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -126,8 +131,10 @@ DEPENDENCIES
   rest-client
   rspec
   rubygems-update
+  sass
   sinatra
   sinatra-contrib
+  slim
   thin
 
 BUNDLED WITH

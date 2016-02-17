@@ -7,6 +7,7 @@ require 'rack-flash' #not used so far
 require 'rest-client'
 require 'sinatra'
 require 'sinatra/base'
+require 'slim'
 require 'uri'
 
 
@@ -26,7 +27,7 @@ end
 
 
   get '/' do
-    erb :form
+    slim :form
   end
 
   post '/' do
@@ -40,11 +41,11 @@ end
     result_array = JSON.parse api_result
     result = result_array.reduce Hash.new, :merge
 
-    erb :index, :locals => {results: result['avg_total_earnings'].to_f.round(2)}
+    slim :index, :locals => {results: result['avg_total_earnings'].to_f.round(2)}
   end
 
   get '/dataset'do
-    erb :dataset
+    slim :dataset
   end
 
   # Easy environment check from browser
