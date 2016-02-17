@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'better_errors' if development?
 require 'bundler'
 Bundler.setup
 require 'dotenv'
@@ -9,7 +8,6 @@ require 'rack-flash' #not used so far
 require 'rest-client'
 require 'sinatra'
 require 'sinatra/base'
-require 'sinatra/reloader' if development?
 require 'uri'
 
 
@@ -18,6 +16,8 @@ set :root, File.dirname(__FILE__)
 Dotenv.load
 
 configure :development do
+  require 'better_errors' if development?
+  require 'sinatra/reloader'
   use BetterErrors::Middleware
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
@@ -45,17 +45,17 @@ get '/dataset'do
 end
 
 # Easy environment check from browser
-get '/environment' do
-  if development?
-    "development"
-  elsif production?
-    "production"
-  elsif test?
-    "test"
-  else
-    "Who knows what environment you're in!"
-  end
-end
+# get '/environment' do
+#   if development?
+#     "development"
+#   elsif production?
+#     "production"
+#   elsif test?
+#     "test"
+#   else
+#     "Who knows what environment you're in!"
+#   end
+# end
 
 not_found do
   halt 404, 'page not found'
