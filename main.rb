@@ -29,10 +29,10 @@ end
   end
 
   post '/' do
-    # headers "Cache-Control" => "public, must-revalidate, max-age=3600",
-    #   "Expires" => Time.at(Time.now.to_i + (60 * 60)).to_s
+    headers "Cache-Control" => "public, must-revalidate, max-age=3600",
+      "Expires" => Time.at(Time.now.to_i + (60 * 60)).to_s
 
-    # @time_rendered = "This page rendered at #{Time.now}."
+    @time_rendered = "This page rendered at #{Time.now}."
 
     cap_title = params[:title].capitalize
 
@@ -51,19 +51,6 @@ end
   get '/dataset'do
     slim :dataset
   end
-
-  # Easy environment check from browser
-  # get '/environment' do
-  #   if development?
-  #     "development"
-  #   elsif production?
-  #     "production"
-  #   elsif test?
-  #     "test"
-  #   else
-  #     "Who knows what environment you're in!"
-  #   end
-  # end
 
   not_found do
     halt 404, 'page not found'

@@ -1,6 +1,13 @@
 
 require File.join(File.dirname(__FILE__), '../main.rb')
 require 'rack/test'
+require 'capybara/rspec'
+
+def app
+  Sinatra::Application
+end
+
+Capybara.app = Sinatra::Application
 
 ENV['RACK_ENV'] = 'test'
 
@@ -13,4 +20,6 @@ RSpec.configure do |conf|
   end
   conf.include Rack::Test::Methods
   conf.order = "random"
+  conf.include Capybara::DSL, feature: true
+  conf.include Capybara::RSpecMatchers, feature: true
 end
