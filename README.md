@@ -34,7 +34,7 @@ The application is live on Heroku at: https://young-castle-28948.herokuapp.com
 ## API Information
 The API being consumed is the City of Boston Employee Earnings Report, accessed through the Socrata Open Data API (SODA) - https://data.cityofboston.gov/Finance/Employee-Earnings-Report-2014/4swk-wcg8
 
-The data is processed on the API server side using SODA filters and the Socrata Query Language (Soda).
+The data is processed on the API server side using SODA filters and the Socrata Query Language (SoQL).
 
 ## Status
 My last prior experience with Sinatra was for a short time and over two years ago. My experience with rspec/capaybara/cucumber is somewhat limited - I need to do more research how best to use these technologies in combination. I'm most dissatisfied with the current test coverage and my top priority is to increase that coverage. The necessary file structure is in place.
