@@ -4,22 +4,26 @@ header
     = @title
     | "
 
-section
-   p
-     = @time_rendered
+div id="time-stamp"
+  section
+    p
+      = @time_rendered
 
 section
   table
     th
-      p Average Total Earnings
+      p
+        h2 Average Total Earnings
     tr
       td
-        | $
-        = results
+        div id="salary-result"
+          | $
+          = results
 
 section
-  a[href="/"]
-    | Search Again
+  div id="search-link"
+    a[href="/"]
+      | Search Again
   hr[noshade]
 
 
