@@ -1,22 +1,26 @@
-h1
-  | Average Salary Results for "
-  = @title
-  | "
+header
+  h1
+    | Average Salary Results for "
+    = @title
+    | "
 
-= @time_rendered
+section
+   p
+     = @time_rendered
 
-table
-  th
-    p Average Total Earnings
-  tr
-    td
-      | $
-      = results
-a[href="/"]
-  | Search Again
-hr[noshade]
-|  Powered by the &#32;
-a[href="  https://opendata.socrata.com/" target="_new"]
-  | Soda API
+section
+  table
+    th
+      p Average Total Earnings
+    tr
+      td
+        | $
+        = results
+
+section
+  a[href="/"]
+    | Search Again
+  hr[noshade]
+
 
 
