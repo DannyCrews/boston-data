@@ -22,7 +22,7 @@ Since the task at hand doesn't require a database, I chose to use Sinatra DSL to
 * capaybara
 * cucumber
 
-Very little of the code was generated. The Guardfile is the only generated file that I'm aware of.
+Very little of the code was generated. The Guardfile and mormalize.css are the only generated files that I'm aware of.
 
 The file structure is configured to support upload to Heroku.
 
