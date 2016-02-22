@@ -1,9 +1,50 @@
-a {
-  text-decoration: none;
-}
-
+/**********************************
+GENERAL
+***********************************/
 #wrapper {
-
+  max-width: 940px;
+  margin: 0, auto;
+  padding: 0 5%;
 }
+
+/* links */
+a, a:hover {
+  text-decoration: none;
+  color: #32673f;;
+}
+
+/**********************************
+HEADING
+***********************************/
+
+/* Green Banner */
+#banner {
+  text-align: center;
+  margin: 0;
+  background: #6ab47b;
+  border-color: #599a68;
+  color: #fff;
+}
+
+/**********************************
+SITE BODY
+***********************************/
+/* grey text */
+body {
+  font-family: 'Changa One', sans-serif;
+  background-color: white;
+  color: #999;
+}
+
+footer {
+  text-align: center;
+  max-width: 940px;
+}
+
+#time-stamp {
+  text-align: center;
+}
+
+
 
 

@@ -35,19 +35,21 @@ end
     @time_rendered = "This page rendered at #{Time.now.strftime("%T%z %m-%d-%Y")}"
 
     cap_title = params[:title].capitalize
-
     @title = params[:title]
 
+    # cap title inserted into api url
     html = "https://data.cityofboston.gov/resource/ntv7-hwjm.json?$where=title like '%#{cap_title}%'&$limit=25000&$select=avg(total_earnings)"
     encoded_url = URI.encode html
-
+    # get data with encoded url
     api_result = RestClient.get encoded_url
+    # parse returned result and get it out of the hash
     result_array = JSON.parse api_result
     result = result_array.reduce Hash.new, :merge
 
     slim :index, :locals => {results: result['avg_total_earnings'].to_f.round(2)}
   end
 
+  # route to dataset iframe
   get '/dataset'do
     slim :dataset
   end
