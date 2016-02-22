@@ -32,7 +32,7 @@ end
     headers "Cache-Control" => "public, must-revalidate, max-age=3600",
       "Expires" => Time.at(Time.now.to_i + (60 * 60)).to_s
 
-    @time_rendered = "This page rendered at #{Time.now.strftime("%m-%d-%Y")}"
+    @time_rendered = "This page rendered at #{Time.now.strftime("%H:%M %m-%d-%Y")}"
 
     cap_title = params[:title].capitalize
 
