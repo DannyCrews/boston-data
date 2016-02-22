@@ -10,21 +10,20 @@ div id="time-stamp"
       = @time_rendered
 
 section
-  table
-    th
-      p
-        h2 Average Total Earnings
-    tr
-      td
-        div id="salary-result"
-          | $
-          = results
-
-section
-  div id="search-link"
-    a[href="/"]
-      | Search Again
-  hr[noshade]
+  div id="wrapper"
+    table
+      th
+        p
+          h2 Average Total Earnings
+      tr
+        td
+          div id="salary-result"
+            | $
+            = results
+    div id="search-link"
+      a[href="/"]
+        | Search Again
+    hr[noshade]
 
 
 

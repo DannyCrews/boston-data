@@ -4,12 +4,13 @@ html
   head
     title Average Earnings | Boston City Employees
     meta charset="utf-8"
-    link rel="stylesheet" type="text.css" href="styles.css"
+    link rel="stylesheet" href="normalize.css"
+    link rel="stylesheet" href="main.css"
   body
-    #content
-      == yield
-  footer
-    div id="copyright"
-      p &copy; 2016 Dan Crews.
-    div id="socrata-link"
-      a href="http://www.socrata.com/" target="_blank"  Powered by Socrata
+    == yield
+  div id="wrapper"
+    footer
+      div id="copyright"
+        p &copy; 2016 Dan Crews.
+      div id="socrata-link"
+        a href="http://www.socrata.com/" target="_blank"  Powered by Socrata
